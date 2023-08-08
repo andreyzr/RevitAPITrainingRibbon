@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="RevitAPI">
       <HintPath>C:\Program Files\Autodesk\Revit 2021\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -55,9 +56,13 @@
   <ItemGroup>
     <None Include="RevitAPITrainingRibbon.addin" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\RevitAPITrainingUI_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)*.*" "C:\RevitAPITraining" /y /i
-xcopy "$(ProjectDir)$(ProjectName).addin" "%25ProgramData%25\Autodesk\Revit\Addins\2021\" /y /i</PostBuildEvent>
+xcopy "$(ProjectDir)$(ProjectName).addin" "%25ProgramData%25\Autodesk\Revit\Addins\2021\" /y /i
+xcopy "$(ProjectDir)Images\*.*" "C:\RevitAPITraining\Images\" /y /i</PostBuildEvent>
   </PropertyGroup>
 </Project>

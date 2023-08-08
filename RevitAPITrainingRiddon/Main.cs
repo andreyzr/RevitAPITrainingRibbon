@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace RevitAPITrainingRibbon
 {
@@ -32,7 +33,9 @@ namespace RevitAPITrainingRibbon
                 Path.Combine(utilsFolderPath, "RevitAPITrainingFloatingList.dll"),
                 "RevitAPITrainingFloatingList.Main");
 
-
+            Uri uriImage = new Uri(@"C:\RevitAPITraining\Images\RevitAPITrainingUI_32.png", UriKind.Absolute);
+            BitmapImage largeImage = new BitmapImage(uriImage);
+            button.LargeImage = largeImage;
 
             panel.AddItem(button);
 
